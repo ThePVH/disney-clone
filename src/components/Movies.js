@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { selectMovies } from "../features/movie/movieSlice";
 import { useSelector } from "react-redux";
 
@@ -13,10 +14,14 @@ function Movies() {
         {movies &&
           movies.map((movie) => (
             <Wrap key={movie.id}>
-              <img
-                src={"https://image.tmdb.org/t/p/w500" + movie.data.poster_path}
-                alt=""
-              />
+              <Link to={`/detail/${movie.id}`}>
+                <img
+                  src={
+                    "https://image.tmdb.org/t/p/w500" + movie.data.poster_path
+                  }
+                  alt=""
+                />
+              </Link>
             </Wrap>
           ))}
       </Content>
@@ -27,7 +32,7 @@ function Movies() {
 export default Movies;
 
 const Container = styled.div`
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 `;
 
 const Content = styled.div`

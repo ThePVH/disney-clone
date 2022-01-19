@@ -1,20 +1,18 @@
-import firebase from "firebase";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA9BnlX96fMf7XiUVCFRsoQzG8DGERJkeY",
-  authDomain: "disneyplus-clone-a33d5.firebaseapp.com",
-  projectId: "disneyplus-clone-a33d5",
-  storageBucket: "disneyplus-clone-a33d5.appspot.com",
-  messagingSenderId: "37918794208",
-  appId: "1:37918794208:web:dbe9842dfe1dda522a4b85",
-  measurementId: "G-DRVLJKWRWG",
+  apiKey: "AIzaSyA-ENgIATju6rmKjTUXy2SHDeDv6KV1b2Q",
+  authDomain: "personal-fcb9d.firebaseapp.com",
+  projectId: "personal-fcb9d",
+  storageBucket: "personal-fcb9d.appspot.com",
+  messagingSenderId: "692967504199",
+  appId: "1:692967504199:web:a63a2a1963e85fa8faf462",
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-const storage = firebase.storage();
+const app = initializeApp(firebaseConfig);
 
-export { auth, provider, storage };
-export default db;
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+export { auth, provider };
