@@ -7,9 +7,7 @@ function Detail() {
   const [movie, setMovie] = useState();
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=aedb1a4cbb4615ec7dfcb9f1329d7677&language=en-US`
-    )
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=lol&language=en-US`)
       .then((res) => res.json())
       .then(
         (result) => {
